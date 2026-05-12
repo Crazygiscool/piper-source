@@ -6,6 +6,7 @@ from pathlib import Path
 import torch
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import ModelCheckpoint
+from pytorch_lightning.loggers import TensorBoardLogger
 
 from .vits.lightning import VitsModel
 
@@ -90,9 +91,9 @@ def main():
     )
 
     if args.resume_from_single_speaker_checkpoint:
-        assert (
-            num_speakers > 1
-        ), "--resume_from_single_speaker_checkpoint is only for multi-speaker models. Use --resume_from_checkpoint for single-speaker models."
+        assert num_speakers > 1, (
+            "--resume_from_single_speaker_checkpoint is only for multi-speaker models. Use --resume_from_checkpoint for single-speaker models."
+        )
 
         # Load single-speaker checkpoint
         _LOGGER.debug(

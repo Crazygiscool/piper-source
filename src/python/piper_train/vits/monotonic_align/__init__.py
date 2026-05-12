@@ -1,7 +1,12 @@
+import pathlib
+
 import numpy as np
 import torch
 
-from .monotonic_align.core import maximum_path_c
+# Register PosixPath as a safe global for PyTorch 2.6+
+torch.serialization.add_safe_globals([pathlib.PosixPath])
+
+from .core import maximum_path_c
 
 
 def maximum_path(neg_cent, mask):
