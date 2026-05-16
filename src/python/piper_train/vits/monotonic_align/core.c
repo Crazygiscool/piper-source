@@ -5,7 +5,7 @@
     "distutils": {
         "name": "piper_train.vits.monotonic_align.core",
         "sources": [
-            "/home/crazyg/Documents/code/ahsoka-piper-voice/piper-source/src/python/piper_train/vits/monotonic_align/core.pyx"
+            "/home/crazyg/Documents/Code/ahsoka-piper-voice/piper-source/src/python/piper_train/vits/monotonic_align/core.pyx"
         ]
     },
     "module_name": "piper_train.vits.monotonic_align.core"
